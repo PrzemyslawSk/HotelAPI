@@ -53,7 +53,7 @@ namespace HotelAPI.Services
                 .FirstOrDefault(h => h.Id == id);
 
             if (hotel is null)
-                throw new NotFoundException("Restaurant not found");
+                throw new NotFoundException("Hotel not found");
 
             _dbContext.Hotels.Remove(hotel);
             _dbContext.SaveChanges();
@@ -68,7 +68,7 @@ namespace HotelAPI.Services
             .FirstOrDefault(h => h.Id == id);
 
             if (hotel is null)
-                throw new NotFoundException("Restaurant not found");
+                throw new NotFoundException("Hotel not found");
 
             var result = _mapper.Map<HotelDto>(hotel);
             return result;
